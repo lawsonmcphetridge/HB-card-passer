@@ -11,3 +11,4 @@ test('renders different players', () => {
   expect(player2).toBeInTheDocument();
   expect(player3).toBeInTheDocument();
 });
+//netlify
