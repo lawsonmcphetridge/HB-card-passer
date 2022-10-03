@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 
 
-export default function CardList({ cards, player, }) {
+export default function CardList({ cards, player }) {
   return (
     
     <div className="card-list">

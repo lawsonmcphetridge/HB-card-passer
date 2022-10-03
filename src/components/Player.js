@@ -5,7 +5,7 @@ import { UserContext } from '../context/GameContext';
 
 export default function Player({
   player,
-  hand,
+  hand
 }) {
   const { selectedCard, setSelectedCard, to, setTo } = useContext(UserContext);
   return (

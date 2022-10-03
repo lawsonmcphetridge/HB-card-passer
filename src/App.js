@@ -12,7 +12,7 @@ function App() {
   const [playerOneHand, setPlayerOneHand] = useState([]);
   const [playerTwoHand, setPlayerTwoHand] = useState([]);
   const [playerThreeHand, setPlayerThreeHand] = useState([]);
-  const { to, setTo } = useContext(UserContext);
+  const { to } = useContext(UserContext);
   const { from, setFrom } = useContext(UserContext);
   const { selectedCard, setSelectedCard } = useContext(UserContext);
 
@@ -47,22 +47,16 @@ function App() {
       <section>
         {/* if the player names are numbers, that will make our life easier later because we can reuse numbers as arrays. Note that this will make our app brittle! */}
         <Player
-          to={to}
           player={1}
           hand={playerOneHand} 
-          setTo={setTo}
         />
         <Player
-          to={to}
           player={2}
           hand={playerTwoHand}
-          setTo={setTo}
         />
         <Player
-          to={to}
           player={3}
           hand={playerThreeHand}
-          setTo={setTo}
         />
         <CardList
           cards={deck}
@@ -73,9 +67,7 @@ function App() {
         {selectedCard && (
           <ExecutePassButton
             passCard={passCard}
-            setFrom={setFrom}
-            from={from}
-            to={to}  
+            setFrom={setFrom} 
           />
         )}
       </section>
