@@ -12,8 +12,8 @@ function App() {
   const [playerOneHand, setPlayerOneHand] = useState([]);
   const [playerTwoHand, setPlayerTwoHand] = useState([]);
   const [playerThreeHand, setPlayerThreeHand] = useState([]);
+  const { to, setTo } = useContext(UserContext);
   const { from, setFrom } = useContext(UserContext);
-  const [to, setTo] = useState(1);
   const { selectedCard, setSelectedCard } = useContext(UserContext);
 
   function findCardIndex(value, suit, cards) {
@@ -49,27 +49,23 @@ function App() {
         <Player
           to={to}
           player={1}
-          hand={playerOneHand}
-          setFrom={setFrom} 
+          hand={playerOneHand} 
           setTo={setTo}
         />
         <Player
           to={to}
           player={2}
           hand={playerTwoHand}
-          setFrom={setFrom}
           setTo={setTo}
         />
         <Player
           to={to}
           player={3}
           hand={playerThreeHand}
-          setFrom={setFrom}
           setTo={setTo}
         />
         <CardList
           cards={deck}
-          setFrom={setFrom}
           player={'deck'}
         />
       </section>

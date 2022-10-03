@@ -5,11 +5,9 @@ import { UserContext } from '../context/GameContext';
 
 export default function Player({
   player,
-  setTo,
   hand,
-  to,
 }) {
-  const { selectedCard, setSelectedCard, setFrom } = useContext(UserContext);
+  const { selectedCard, setSelectedCard, to, setTo } = useContext(UserContext);
   return (
     <div
       className={`player ${to === player ? 'selected-player' : ''}`}
@@ -19,7 +17,6 @@ export default function Player({
       <CardList
         player={player}
         cards={hand}
-        setFrom={setFrom}
         selectedCard={selectedCard}
         setSelectedCard={setSelectedCard}
       />
